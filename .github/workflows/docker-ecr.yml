@@ -22,12 +22,12 @@ jobs:
 
       - name: Login to ECR
         run: |
-         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 315915553474.dkr.ecr.us-east-1.amazonaws.com
+         aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 153519860425.dkr.ecr.us-east-1.amazonaws.com
         
       - name: Build Docker image
         run: docker build -t frontend .
 
       - name: Tag image
-        run: docker tag frontend:latest 315915553474.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+        run: docker tag frontend:latest 153519860425.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
       - name: Push image
-        run: docker push 315915553474.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
+        run: docker push 153519860425.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
